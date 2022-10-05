@@ -1,12 +1,12 @@
-function darkMode(){
-    const moonShadow = document.getElementById("darkMode");
-    const nightLight = document.getElementById("nightLight");
-    const html = document.querySelector("html")
+const saveDm = localStorage.getItem("nocturneview")
+const moonShadow = document.getElementById("darkMode");
+const nightLight = document.getElementById("nightLight");
+const html = document.querySelector("html")
 
+function darkMode(){
     nightLight.addEventListener('click', () => {
     html.classList.toggle("dark-mode")
 
-    const saveDm = localStorage.getItem("nocturneview")
     if(!saveDm){
         localStorage.setItem('nocturneview', true)
     } 
@@ -20,7 +20,10 @@ function darkMode(){
 
     }
     )
-
-   
 }
 darkMode()
+
+if(saveDm){
+    html.classList.add("dark-mode")
+    moonShadow.src = "../../assets/img/sun.png"
+}
