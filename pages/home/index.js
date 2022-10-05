@@ -1,8 +1,20 @@
 const label = document.getElementById("label");
 const inputPrice = document.createElement("p")
 const priceFilter = document.getElementById("price");
-label.appendChild(inputPrice)
-inputPrice.innerText = `Até R$ ${priceFilter.value}`;
+/* const list = document.getElementsByTagName("li"); */
+label.appendChild(inputPrice);
+/* console.log(list) */
+priceFilter.addEventListener('mousemove', () => {
+    inputPrice.innerText = `Até R$ ${priceFilter.value}`;
+    
+    
+/*     list.filter((i) => {
+        if(i.price > priceFilter.value){
+            i.classList.add("none")
+        } else {i.classList.remove("none")}
+    }) */
+    
+});
 
 const filterBtn = document.querySelectorAll("[data-modal-control]")
 
@@ -11,7 +23,7 @@ for(let i = 0; i < filterBtn.length; i++){
         ul.innerHTML = "";
         let musicStyle = filterBtn[i].getAttribute("data-modal-control");
         products.filter((i) => {
-            if(i.category == musicStyle || musicStyle == 0){
+            if(i.category == musicStyle && i.price <= priceFilter.value || musicStyle == 0 && i.price <= priceFilter.value){
                 return renderCard(i)
             }
         })

@@ -80,3 +80,7 @@ label p {
     justify-content: space-between;
     margin: 0 12px 27.5px 16px;
  }
+
+ .none{
+    display: none;
+ }

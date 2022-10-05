@@ -1,7 +1,8 @@
 /* input {
     width: 100%;
-    background: var(--color-brand-1);
+    color: var(--color-brand-1);
     margin-bottom: 4rem;
+    background-color: var(--color-brand-1); 
 } */
 input[type="range"] {
     -webkit-appearance: none;
@@ -12,24 +13,23 @@ input[type="range"] {
     margin-bottom: 4rem;
   }
   
-  /* Removes default focus */
+
   input[type="range"]:focus {
     outline: none;
   }
   
-  /******** Chrome, Safari, Opera and Edge Chromium styles ********/
-  /* slider track */
+
   input[type="range"]::-webkit-slider-runnable-track {
     background-color: var(--color-brand-1);
     border-radius: 0.5rem;
     height: 0.5rem;
   }
   
-  /* slider thumb */
+
   input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Override default look */
+    -webkit-appearance: none;
     appearance: none;
-    margin-top: -4px; /* Centers thumb on the track */
+    margin-top: -4px; 
     background-color: var(--color-brand-1);
     border-radius: 0.5rem;
     height: 1rem;
