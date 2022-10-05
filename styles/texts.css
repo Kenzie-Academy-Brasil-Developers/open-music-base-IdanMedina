@@ -1,0 +1,26 @@
+h2 {
+    font-weight: 600;
+font-size: 16px;
+line-height: 19px;
+color: var(--color-grey-1);
+}
+
+li h2 {
+    margin-left: 16px;
+    margin-bottom: 27.5px;
+ }
+
+.info p {
+font-weight: 500;
+font-size: 12px;
+line-height: 15px;
+color: var(--color-grey-2);
+}
+
+.purchase p {
+    font-weight: 500;
+font-size: 14px;
+line-height: 0px;
+color: var(--color-grey-2);
+}
+
