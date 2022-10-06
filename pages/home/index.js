@@ -1,34 +1,35 @@
 const label = document.getElementById("label");
 const inputPrice = document.createElement("p")
 const priceFilter = document.getElementById("price");
-/* const list = document.getElementsByTagName("li"); */
+const list = document.getElementsByName("li");
+const filterBtn = document.querySelectorAll("[data-modal-control]")
+const filteredItens = []
+console.log(filteredItens)
 label.appendChild(inputPrice);
-/* console.log(list) */
+
 priceFilter.addEventListener('mousemove', () => {
     inputPrice.innerText = `Até R$ ${priceFilter.value}`;
-    
-    
-/*     list.filter((i) => {
-        if(i.price > priceFilter.value){
-            i.classList.add("none")
-        } else {i.classList.remove("none")}
-    }) */
-    
+   /*   products.filter((i) => {
+        let musicStyle = filterBtn[i].getAttribute("data-modal-control");
+        if(i.category == musicStyle && i.price <= priceFilter.value || musicStyle == 0 && i.price <= priceFilter.value){
+            return renderCard(i)
+        } */
 });
 
-const filterBtn = document.querySelectorAll("[data-modal-control]")
 
-for(let i = 0; i < filterBtn.length; i++){
-    filterBtn[i].addEventListener("click", ()=>{
+
+filterBtn.forEach((element) => {
+    element.addEventListener("click", ()=>{
         ul.innerHTML = "";
-        let musicStyle = filterBtn[i].getAttribute("data-modal-control");
-        products.filter((i) => {
+        let musicStyle = element.getAttribute("data-modal-control");
+        let filter = products.filter((i) => {
             if(i.category == musicStyle && i.price <= priceFilter.value || musicStyle == 0 && i.price <= priceFilter.value){
+            
                 return renderCard(i)
             }
         })
     })
-}
+})
 
 const ul = document.getElementById("ul");
 
@@ -53,6 +54,7 @@ function renderCard(item){
     title.innerText = item.title;
     price.innerText = `R$ ${item.price.toFixed(2)}`;
     button.innerText = "Comprar";
+    li.id = item.id;
 
     divName.append(name, year);
     prices.append(price, button);
